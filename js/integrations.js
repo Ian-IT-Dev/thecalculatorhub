@@ -2,26 +2,28 @@
 
 /* ============================================================
    Site config & third-party integrations
-   - SITE_DOMAIN: change to your custom domain in one line
-   - GA4 measurement ID (gtag)
-   - AdSense client (leave blank until approved)
-   - Skimlinks publisher ID
-   - Amazon Associates tag
+   - SITE_DOMAIN: custom domain (apex)
+   - ANALYTICS_ID: GA4 Measurement ID (gtag.js direct injection)
+   - ADSENSE_CLIENT: auto-injected when set (or wait for AdSense approval)
+   - SKIMLINKS_PUBLISHER: auto-injected when set
+   - AMAZON_TAG: auto-appended to Amazon affiliate links
    ============================================================ */
 
-const SITE_DOMAIN = 'https://thecalculatorhub.co.uk'; // custom domain (apex); no trailing slash
+const SITE_DOMAIN = 'https://thecalculatorhub.co.uk';
 
-const ANALYTICS_ID = 'G-XXXXXXXXXX';   // paste your GA4 Measurement ID
-const ADSENSE_CLIENT = '';             // e.g. 'ca-pub-1234567890123456' once approved
-const SKIMLINKS_PUBLISHER = 'xxxxx';    // paste Skimlinks publisher code (skimwords)
-const AMAZON_TAG = 'yourname-20';       // paste Amazon Associates tag
+const ANALYTICS_ID = 'G-GNBMJV5CET';        // GA4 Measurement ID
+const ADSENSE_CLIENT = '';                  // e.g. 'ca-pub-1234567890123456' once approved
+const SKIMLINKS_PUBLISHER = 'xxxxx';        // paste Skimlinks publisher code when approved
+const AMAZON_TAG = 'yourname-20';           // paste Amazon Associates tag when approved
 
-/* ---- inject GA4 + Skimlinks + AdSense once on DOMContentLoaded ---- */
+/* ---- inject Google Analytics 4 (gtag.js) ---- */
 function injectAnalytics(){
-  if (!ANALYTICS_ID || ANALYTICS_ID === 'G-XXXXXXXXXX') return; // placeholder OR unset
+  if (!ANALYTICS_ID) return;
   const s = document.createElement('script');
-  s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ANALYTICS_ID;
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ANALYTICS_ID;
   document.head.appendChild(s);
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
   window.gtag = gtag;
