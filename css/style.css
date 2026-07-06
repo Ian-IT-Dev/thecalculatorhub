@@ -150,6 +150,7 @@ a:hover { text-decoration: underline; }
 body.nav-open .nav-drawer { transform: none; }
 .nav-drawer a { display: block; padding: 11px 6px; color: var(--ink); border-bottom: 1px solid var(--border); font-size: 16px; }
 .nav-drawer a:hover { color: var(--brand); }
+.nav-drawer a.nav-article { color: var(--brand-dark); font-style: italic; }
 .nav-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .22s; z-index: 40; }
 body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 .nav-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 22px; color: var(--ink-soft); cursor: pointer; }
@@ -248,3 +249,15 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 .article p { color: var(--ink-soft); }
 .article .example { background: var(--brand-tint); border-radius: 10px; padding: 14px 16px; }
 .article .btn { margin: 8px 0; }
+
+/* ---- featured article on hub ---- */
+.featured-article { padding: 16px 0 8px; }
+.featured-article h2 { font-size: 22px; margin: 0 0 12px; }
+.article-card {
+  display: block; background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow);
+  transition: transform .15s ease, border-color .15s;
+}
+.article-card:hover { transform: translateY(-2px); border-color: var(--brand); text-decoration: none; }
+.article-card h3 { font-size: 19px; margin: 0 0 8px; color: var(--ink); }
+.article-card p { margin: 0 0 14px; color: var(--ink-soft); font-size: 15px; }
