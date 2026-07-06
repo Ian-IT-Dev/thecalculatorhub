@@ -239,6 +239,7 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 .affil-link-line { font-size: 15px; color: var(--ink-soft); margin-top: 14px; padding: 14px 16px; background: var(--brand-tint); border-radius: 10px; display: flex; align-items: center; gap: 14px; }
 .affil-link-line a { color: var(--brand-dark); font-weight: 600; }
 .affil-icon { flex-shrink: 0; }
+.affil-img { flex-shrink: 0; border-radius: 8px; border: 1px solid var(--border); }
 
 /* ---- article pages ---- */
 .article { max-width: 720px; }
