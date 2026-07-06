@@ -13,7 +13,7 @@ const SITE_DOMAIN = 'https://thecalculatorhub.co.uk';
 
 const ANALYTICS_ID = 'G-GNBMJV5CET';        // GA4 Measurement ID
 const ADSENSE_CLIENT = '';                  // e.g. 'ca-pub-1234567890123456' once approved
-const SKIMLINKS_PUBLISHER = 'xxxxx';        // paste Skimlinks publisher code when approved
+const SKIMLINKS_PUBLISHER = '305849X1794075';    // Skimlinks publisher code
 const AMAZON_TAG = 'yourname-20';           // paste Amazon Associates tag when approved
 
 /* ---- inject Google Analytics 4 (gtag.js) ---- */
@@ -32,10 +32,10 @@ function injectAnalytics(){
 }
 
 function injectSkimlinks(){
-  if (!SKIMLINKS_PUBLISHER || SKIMLINKS_PUBLISHER === 'xxxxx') return; // placeholder
+  if (!SKIMLINKS_PUBLISHER) return;
   const s = document.createElement('script');
   s.async = true;
-  s.src = '//s.skimresources.com/js/' + SKIMLINKS_PUBLISHER + '.skimlinks.js';
+  s.src = 'https://s.skimresources.com/js/' + SKIMLINKS_PUBLISHER + '.skimlinks.js';
   document.body.appendChild(s);
 }
 
