@@ -87,15 +87,6 @@ function formatAffiliateLinks(){
       } catch (e) {}
     }
   });
-
-  // Insert disclosure before the first affiliate link on the page
-  const first = links[0];
-  if (first && !first.previousElementSibling?.classList?.contains('affil-disclosure') && !first.closest('.affil-disclosure')) {
-    const disclosure = document.createElement('p');
-    disclosure.className = 'affil-disclosure';
-    disclosure.textContent = 'Some links on this page are affiliate links. We may earn a commission if you sign up or make a purchase — at no extra cost to you. See our affiliate disclosure.';
-    first.insertAdjacentElement('beforebegin', disclosure);
-  }
 }
 
 /* ---- Replace AdSense placeholder <div data-ad> with <ins> tags (only fires when ADSENSE_CLIENT set) handled in injectAdSense ---- */

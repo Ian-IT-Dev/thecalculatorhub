@@ -236,8 +236,9 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 .legal ul li { margin-bottom: 6px; }
 .legal code { background: var(--bg-soft); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
 .legal-muted { font-size: 13px; font-style: italic; opacity: .75; margin-top: 1.6em; }
-.affil-link-line { font-size: 15px; color: var(--ink-soft); margin-top: 14px; padding: 12px 14px; background: var(--brand-tint); border-radius: 10px; }
+.affil-link-line { font-size: 15px; color: var(--ink-soft); margin-top: 14px; padding: 14px 16px; background: var(--brand-tint); border-radius: 10px; display: flex; align-items: center; gap: 14px; }
 .affil-link-line a { color: var(--brand-dark); font-weight: 600; }
+.affil-icon { flex-shrink: 0; }
 
 /* ---- article pages ---- */
 .article { max-width: 720px; }
@@ -248,6 +249,7 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 .article h3 { font-size: 18px; margin-top: 1.4em; margin-bottom: 6px; }
 .article p { color: var(--ink-soft); }
 .article .example { background: var(--brand-tint); border-radius: 10px; padding: 14px 16px; }
+.article-hero { margin: 16px 0 8px; border-radius: 12px; border: 1px solid var(--border); }
 .article .btn { margin: 8px 0; }
 
 /* ---- featured article on hub ---- */
