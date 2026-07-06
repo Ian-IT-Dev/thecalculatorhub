@@ -240,6 +240,7 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 .affil-link-line a { color: var(--brand-dark); font-weight: 600; }
 .affil-icon { flex-shrink: 0; }
 .affil-img { flex-shrink: 0; border-radius: 8px; border: 1px solid var(--border); }
+.affil-img-inline { vertical-align: middle; border-radius: 4px; border: 1px solid var(--border); margin: 0 4px; }
 
 /* ---- article pages ---- */
 .article { max-width: 720px; }
