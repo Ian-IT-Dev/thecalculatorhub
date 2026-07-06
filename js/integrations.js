@@ -14,7 +14,7 @@ const SITE_DOMAIN = 'https://thecalculatorhub.co.uk';
 const ANALYTICS_ID = 'G-GNBMJV5CET';        // GA4 Measurement ID
 const ADSENSE_CLIENT = '';                  // e.g. 'ca-pub-1234567890123456' once approved
 const SKIMLINKS_PUBLISHER = '305849X1794075';    // Skimlinks publisher code
-const AMAZON_TAG = 'yourname-20';           // paste Amazon Associates tag when approved
+const AMAZON_TAG = 'thecalcula029-20';       // Amazon Associates tag
 
 /* ---- inject Google Analytics 4 (gtag.js) ---- */
 function injectAnalytics(){
