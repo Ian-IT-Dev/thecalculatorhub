@@ -1,0 +1,14 @@
+{
+  "name": "Calculator Hub — Free Online Calculators",
+  "short_name": "Calculator Hub",
+  "description": "Free, fast, no-signup calculators for finance, loans, retirement, health and everyday math.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f1418",
+  "theme_color": "#0a7c5a",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

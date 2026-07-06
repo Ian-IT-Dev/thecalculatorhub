@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Unit Converter — Length, Mass, Volume, Speed, Temperature</title>
+  <meta name="description" content="Free online unit converter for length, mass, volume, speed, time and temperature. Convert between metric and imperial units instantly in your browser." />
+  <link rel="canonical" href="https://thecalculatorhub.co.uk/unit-converter.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Unit Converter" />
+  <meta property="og:description" content="Convert length, mass, volume, speed, time and temperature instantly." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Unit Converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://thecalculatorhub.co.uk/unit-converter.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free unit converter for length, mass, volume, speed, time and temperature."}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Calculator<span>Hub</span></a>
+      <div class="header-right">
+        <div class="currency-switch"><label class="sr-only" for="currency">Currency</label><select id="currency" aria-label="Currency"></select></div>
+        <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">&#9688;</button>
+        <button class="nav-toggle" data-nav-toggle aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" data-nav-toggle></div>
+  <aside class="nav-drawer" aria-label="Calculators">
+    <button class="nav-close" data-nav-toggle aria-label="Close menu">&times;</button>
+    <a href="index.html">All calculators</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="savings-goal-calculator.html">Savings Goal</a><a href="retirement-calculator.html">Retirement / 401(k)</a><a href="roi-calculator.html">ROI</a><a href="loan-payoff-calculator.html">Loan Payoff</a><a href="mortgage-calculator.html">Mortgage</a><a href="credit-card-payoff-calculator.html">Credit Card Payoff</a><a href="hourly-to-salary.html">Hourly to Salary</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="tip-calculator.html">Tip</a><a href="percentage-calculator.html">Percentage</a><a href="bmi-calculator.html">BMI</a><a href="calorie-calculator.html">Calorie / TDEE</a><a href="unit-converter.html">Unit Converter</a>
+  </aside>
+
+  <main class="container calc-page">
+    <nav class="breadcrumbs"><a href="index.html">Home</a><span>›</span> Unit Converter</nav>
+    <a class="back" href="index.html">&larr; All calculators</a>
+    <section class="calc">
+      <h1>Unit Converter</h1>
+      <p class="desc"><span class="live-dot"></span>Live — convert length, mass, volume, speed, time and temperature between metric and imperial units.</p>
+
+      <form class="calc-form" data-calc="units">
+        <div class="field"><label for="cat">Category</label>
+          <select id="cat" name="cat">
+            <option value="length">Length</option>
+            <option value="mass">Mass</option>
+            <option value="volume">Volume</option>
+            <option value="speed">Speed</option>
+            <option value="time">Time</option>
+            <option value="temperature">Temperature</option>
+          </select>
+        </div>
+        <div class="field"><label for="value">Value</label><input id="value" name="value" type="number" step="any" /></div>
+        <div class="field"><label for="from">From</label><select id="from" name="from"></select></div>
+        <div class="field"><label for="to">To</label><select id="to" name="to"></select></div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Convert</button>
+          <button type="button" class="btn-ghost" data-action="share">Share</button>
+          <button type="button" class="btn-ghost" data-action="reset">Reset</button>
+        </div>
+      </form>
+      <div class="ad-slot" data-ad></div>
+      <div id="result" class="result" data-result></div>
+    </section>
+
+    <section class="content">
+      <h2>About this converter</h2>
+      <p>All conversions use exact SI factors and run locally. Temperature handles Celsius, Fahrenheit and Kelvin with the correct offsets; other categories multiply by a stored factor relative to the SI base unit (metre, kilogram, litre, metre/second, second).</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+      <p>&copy; <span id="year"></span> Calculator Hub. Educational tool.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+<script src="js/integrations.js"></script>
+</body>
+</html>

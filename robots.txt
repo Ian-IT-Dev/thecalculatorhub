@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thecalculatorhub.co.uk/sitemap.xml

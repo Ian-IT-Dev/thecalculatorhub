@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>ROI Calculator — Return on Investment (Free, Instant)</title>
+  <meta name="description" content="Free ROI calculator. Enter your investment cost and final value to see net profit and return on investment as a percentage, plus annualized return and a chart." />
+  <link rel="canonical" href="https://thecalculatorhub.co.uk/roi-calculator.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ROI Calculator — Return on Investment" />
+  <meta property="og:description" content="Calculate return on investment as a percentage and net profit instantly." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"ROI Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","url":"https://thecalculatorhub.co.uk/roi-calculator.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free ROI calculator showing net profit and return on investment percentage."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good ROI?","acceptedAnswer":{"@type":"Answer","text":"It depends on the asset class. Broad stock markets have historically averaged around 7–10% annualized. Real estate and small businesses vary widely. Compare ROI against a benchmark like an index fund for context."}}]}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Calculator<span>Hub</span></a>
+      <div class="header-right">
+        <div class="currency-switch"><label class="sr-only" for="currency">Currency</label><select id="currency" aria-label="Currency"></select></div>
+        <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">&#9688;</button>
+        <button class="nav-toggle" data-nav-toggle aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" data-nav-toggle></div>
+  <aside class="nav-drawer" aria-label="Calculators">
+    <button class="nav-close" data-nav-toggle aria-label="Close menu">&times;</button>
+    <a href="index.html">All calculators</a>
+    <a href="compound-interest-calculator.html">Compound Interest</a>
+    <a href="savings-goal-calculator.html">Savings Goal</a>
+    <a href="retirement-calculator.html">Retirement / 401(k)</a>
+    <a href="roi-calculator.html">ROI</a>
+    <a href="loan-payoff-calculator.html">Loan Payoff</a>
+    <a href="mortgage-calculator.html">Mortgage</a>
+    <a href="credit-card-payoff-calculator.html">Credit Card Payoff</a>
+    <a href="hourly-to-salary.html">Hourly to Salary</a>
+    <a href="sales-tax-calculator.html">Sales Tax</a>
+    <a href="tip-calculator.html">Tip</a>
+    <a href="percentage-calculator.html">Percentage</a>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="calorie-calculator.html">Calorie / TDEE</a>
+    <a href="unit-converter.html">Unit Converter</a>
+  </aside>
+
+  <main class="container calc-page">
+    <nav class="breadcrumbs"><a href="index.html">Home</a><span>›</span> ROI</nav>
+    <a class="back" href="index.html">&larr; All calculators</a>
+    <section class="calc">
+      <h1>ROI Calculator</h1>
+      <p class="desc"><span class="live-dot"></span>Live — measure the return on any investment as a percentage and a net dollar profit. Enter a holding period to also see the annualized return.</p>
+
+      <form class="calc-form" data-calc="roi">
+        <div class="field"><label for="cost">Total cost / amount invested</label><input id="cost" name="cost" type="number" min="0" step="100" /></div>
+        <div class="field"><label for="gain">Final value / amount received</label><input id="gain" name="gain" type="number" min="0" step="100" /></div>
+        <div class="field"><label for="years">Holding period (years, optional)</label><input id="years" name="years" type="number" min="0" step="0.5" /></div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Calculate</button>
+          <button type="button" class="btn-ghost" data-action="share">Share</button>
+          <button type="button" class="btn-ghost" data-action="print">Print</button>
+          <button type="button" class="btn-ghost" data-action="reset">Reset</button>
+        </div>
+      </form>
+      <div class="ad-slot" data-ad></div>
+      <div id="result" class="result" data-result></div>
+    </section>
+
+    <section class="content">
+      <h2>How to calculate ROI</h2>
+      <p>Return on investment (ROI) tells you how much profit you made relative to what you spent. The formula is <code>ROI = (Net profit &divide; Cost) &times; 100</code>, where net profit is your final value minus your cost. A 50% ROI means you earned half of your original investment as profit on top of getting your money back.</p>
+      <h3>Limitations</h3>
+      <p>Simple ROI ignores time. A 50% return over one year is very different from 50% over ten years. For investments held over different periods, use the annualized return (also shown here when you enter a holding period). For a full multi-year model with contributions, try the <a href="compound-interest-calculator.html">compound interest calculator</a>.</p>
+    
+      <p class="affil-link-line">For investing the funds behind your ROI calculation, <a href="#" data-affil="finance" data-affil-id="brokerage">these brokerages offer low-fee accounts</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+      <p>&copy; <span id="year"></span> Calculator Hub. Educational tool — not financial advice.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+<script src="js/integrations.js"></script>
+</body>
+</html>

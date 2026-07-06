@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Retirement Calculator — 401(k) & Nest Egg Projection</title>
+  <meta name="description" content="Free retirement calculator. Enter your age, current savings and monthly contribution to project your nest egg at retirement, with a portfolio growth chart." />
+  <link rel="canonical" href="https://thecalculatorhub.co.uk/retirement-calculator.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Retirement Calculator" />
+  <meta property="og:description" content="Project your retirement nest egg with a growth chart." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Retirement Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","url":"https://thecalculatorhub.co.uk/retirement-calculator.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free retirement and 401(k) nest-egg projection calculator with portfolio growth chart."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do I need to retire?","acceptedAnswer":{"@type":"Answer","text":"A common rule of thumb is 25&times; your annual expenses (the 4% rule). This calculator projects accumulation, not withdrawal. Aim to replace roughly 70–80% of pre-retirement income."}}]}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Calculator<span>Hub</span></a>
+      <div class="header-right">
+        <div class="currency-switch"><label class="sr-only" for="currency">Currency</label><select id="currency" aria-label="Currency"></select></div>
+        <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">&#9688;</button>
+        <button class="nav-toggle" data-nav-toggle aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" data-nav-toggle></div>
+  <aside class="nav-drawer" aria-label="Calculators">
+    <button class="nav-close" data-nav-toggle aria-label="Close menu">&times;</button>
+    <a href="index.html">All calculators</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="savings-goal-calculator.html">Savings Goal</a><a href="retirement-calculator.html">Retirement / 401(k)</a><a href="roi-calculator.html">ROI</a><a href="loan-payoff-calculator.html">Loan Payoff</a><a href="mortgage-calculator.html">Mortgage</a><a href="credit-card-payoff-calculator.html">Credit Card Payoff</a><a href="hourly-to-salary.html">Hourly to Salary</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="tip-calculator.html">Tip</a><a href="percentage-calculator.html">Percentage</a><a href="bmi-calculator.html">BMI</a><a href="calorie-calculator.html">Calorie / TDEE</a><a href="unit-converter.html">Unit Converter</a>
+  </aside>
+
+  <main class="container calc-page">
+    <nav class="breadcrumbs"><a href="index.html">Home</a><span>›</span> Retirement</nav>
+    <a class="back" href="index.html">&larr; All calculators</a>
+    <section class="calc">
+      <h1>Retirement Calculator</h1>
+      <p class="desc"><span class="live-dot"></span>Live — project your nest egg at retirement based on current savings and monthly contributions, with a portfolio growth chart.</p>
+
+      <form class="calc-form" data-calc="retirement">
+        <div class="field"><label for="startAge">Current age</label><input id="startAge" name="startAge" type="number" min="18" max="80" step="1" /></div>
+        <div class="field"><label for="retireAge">Retirement age</label><input id="retireAge" name="retireAge" type="number" min="30" max="90" step="1" /></div>
+        <div class="field"><label for="current">Current savings</label><input id="current" name="current" type="number" min="0" step="1000" /></div>
+        <div class="field"><label for="monthly">Monthly contribution</label><input id="monthly" name="monthly" type="number" min="0" step="50" /></div>
+        <div class="field"><label for="rate">Expected annual return (%)</label><input id="rate" name="rate" type="number" min="0" step="0.1" /></div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Calculate</button>
+          <button type="button" class="btn-ghost" data-action="share">Share</button>
+          <button type="button" class="btn-ghost" data-action="print">Print</button>
+          <button type="button" class="btn-ghost" data-action="reset">Reset</button>
+        </div>
+      </form>
+      <div class="ad-slot" data-ad></div>
+      <div id="result" class="result" data-result></div>
+    </section>
+
+    <section class="content">
+      <h2>The power of starting early</h2>
+      <p>Because retirement money has decades to compound, when you start matters more than how much you contribute. Someone who saves $400/month from age 25 to 35 and then stops can end up with more than someone who saves the same amount from 35 to 65. This calculator assumes steady contributions and a constant return; real returns vary year to year.</p>
+      <h3>The 4% rule</h3>
+      <p>Once retired, a common guideline is that you can safely withdraw about 4% of your nest egg annually. So a $1,000,000 portfolio roughly supports $40,000/year of spending. For finer growth modeling see the <a href="compound-interest-calculator.html">compound interest calculator</a>.</p>
+    
+      <p class="affil-link-line">Ready to start? <a href="#" data-affil="finance" data-affil-id="ira">Compare IRA providers and bonus offers here</a> before opening an account.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+      <p>&copy; <span id="year"></span> Calculator Hub. Educational projection — not financial advice.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+<script src="js/integrations.js"></script>
+</body>
+</html>

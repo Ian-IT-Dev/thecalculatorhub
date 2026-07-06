@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>[ARTICLE TITLE] — Calculator Hub</title>
+  <meta name="description" content="[150–160 CHARACTER META DESCRIPTION — include the primary keyword near the front]" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://thecalculatorhub.co.uk/[filename].html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="[ARTICLE TITLE]" />
+  <meta property="og:description" content="[META DESCRIPTION]" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <!-- Article schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"[ARTICLE TITLE]","description":"[META DESCRIPTION]","author":{"@type":"Person","name":"[Your Name]"},"publisher":{"@type":"Organization","name":"Calculator Hub","url":"https://thecalculatorhub.co.uk/"}}
+  </script>
+  <!-- FAQ schema — duplicate each Question object for every FAQ you include -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"[FREQUENTLY ASKED QUESTION 1]","acceptedAnswer":{"@type":"Answer","text":"[ANSWER 1 — plain prose, no HTML]"}},{"@type":"Question","name":"[FAQ 2]","acceptedAnswer":{"@type":"Answer","text":"[ANSWER 2]"}}]}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Calculator<span>Hub</span></a>
+      <div class="header-right">
+        <div class="currency-switch"><label class="sr-only" for="currency">Currency</label><select id="currency" aria-label="Currency"></select></div>
+        <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">&#9688;</button>
+        <button class="nav-toggle" data-nav-toggle aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" data-nav-toggle></div>
+  <aside class="nav-drawer" aria-label="Calculators">
+    <button class="nav-close" data-nav-toggle aria-label="Close menu">&times;</button>
+    <a href="index.html">All calculators</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="savings-goal-calculator.html">Savings Goal</a><a href="retirement-calculator.html">Retirement / 401(k)</a><a href="roi-calculator.html">ROI</a><a href="loan-payoff-calculator.html">Loan Payoff</a><a href="mortgage-calculator.html">Mortgage</a><a href="credit-card-payoff-calculator.html">Credit Card Payoff</a><a href="hourly-to-salary.html">Hourly to Salary</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="tip-calculator.html">Tip</a><a href="percentage-calculator.html">Percentage</a><a href="bmi-calculator.html">BMI</a><a href="calorie-calculator.html">Calorie / TDEE</a><a href="unit-converter.html">Unit Converter</a>
+  </aside>
+
+  <main class="container calc-page">
+    <nav class="breadcrumbs"><a href="index.html">Home</a><span>›</span> [Category]</nav>
+    <article class="content article">
+      <h1>[ARTICLE TITLE]</h1>
+      <p class="article-lead">[One-sentence summary that includes the primary keyword. Aim for ~18 words.]</p>
+      <p class="article-byline">By [Your Name] · Updated [YYYY-MM-DD]</p>
+
+      <div class="ad-slot" data-ad></div>
+
+      <h2>Section heading</h2>
+      <p>Body paragraph. Aim for ~12 sentence paragraphs max. Use <strong>bold</strong> sparingly for key terms.</p>
+
+      <p>Always include a worked example with real numbers — readers in finance/health search specifically want concrete arithmetic. For example:</p>
+      <p class="example"><em>Example: Saving <strong>$200 per month</strong> at <strong>7% return</strong> for <strong>20 years</strong> grows to <strong>$108,224</strong>. Calc it: <a href="compound-interest-calculator.html?principal=0&rate=7&years=20&contrib=200&contribFreq=monthly&freq=12">on the compound interest calculator</a>.</em></p>
+
+      <h2>Try it yourself</h2>
+      <p>Frame the calculator as the action step:</p>
+      <p><a class="btn" href="compound-interest-calculator.html?principal=1000&rate=7&years=20&contrib=200&contribFreq=monthly&freq=12">Open the compound interest calculator with these numbers &rarr;</a></p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>FAQ 1 question?</h3>
+      <p>FAQ 1 answer (1–2 sentences).</p>
+      <h3>FAQ 2 question?</h3>
+      <p>FAQ 2 answer.</p>
+
+      <h2>Bottom line</h2>
+      <p>Wrap up with the takeaway and one internal link to a related calculator.</p>
+
+      <!-- Optional affiliate line (delete if not relevant) -->
+      <!-- <p class="affil-link-line">For <a href="#" data-affil="finance" data-affil-id="partner-id">comparing options</a> ...</p> -->
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="affiliate-disclosure.html">Affiliate Disclosure</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <p>&copy; <span id="year"></span> Calculator Hub. Educational content — not professional advice.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/integrations.js"></script>
+</body>
+</html>

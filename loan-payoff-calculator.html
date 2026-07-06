@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Loan Payoff Calculator — Monthly Payment, Interest & Amortization</title>
+  <meta name="description" content="Free loan payoff calculator with amortization chart. Find your monthly payment, total interest and payoff time for any loan amount, rate and term. Includes weekly equivalent." />
+  <link rel="canonical" href="https://thecalculatorhub.co.uk/loan-payoff-calculator.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Loan Payoff Calculator" />
+  <meta property="og:description" content="Calculate monthly payment, total interest and payoff time for any loan." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Loan Payoff Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","url":"https://thecalculatorhub.co.uk/loan-payoff-calculator.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free loan payoff calculator with amortized monthly payment and total interest."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is a loan payment calculated?","acceptedAnswer":{"@type":"Answer","text":"For an amortized loan, the monthly payment is P = (PV × r) / (1 − (1 + r)^−n), where r is the monthly interest rate and n is the number of payments."}}]}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Calculator<span>Hub</span></a>
+      <div class="header-right">
+        <div class="currency-switch"><label class="sr-only" for="currency">Currency</label><select id="currency" aria-label="Currency"></select></div>
+        <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">&#9688;</button>
+        <button class="nav-toggle" data-nav-toggle aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" data-nav-toggle></div>
+  <aside class="nav-drawer" aria-label="Calculators">
+    <button class="nav-close" data-nav-toggle aria-label="Close menu">&times;</button>
+    <a href="index.html">All calculators</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="savings-goal-calculator.html">Savings Goal</a><a href="retirement-calculator.html">Retirement / 401(k)</a><a href="roi-calculator.html">ROI</a><a href="loan-payoff-calculator.html">Loan Payoff</a><a href="mortgage-calculator.html">Mortgage</a><a href="credit-card-payoff-calculator.html">Credit Card Payoff</a><a href="hourly-to-salary.html">Hourly to Salary</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="tip-calculator.html">Tip</a><a href="percentage-calculator.html">Percentage</a><a href="bmi-calculator.html">BMI</a><a href="calorie-calculator.html">Calorie / TDEE</a><a href="unit-converter.html">Unit Converter</a>
+  </aside>
+
+  <main class="container calc-page">
+    <nav class="breadcrumbs"><a href="index.html">Home</a><span>›</span> Loan Payoff</nav>
+    <a class="back" href="index.html">&larr; All calculators</a>
+    <section class="calc">
+      <h1>Loan Payoff Calculator</h1>
+      <p class="desc"><span class="live-dot"></span>Live — find the monthly payment and total interest on an amortized loan such as a personal or auto loan. Weekly equivalent shown for weekly-paid earners.</p>
+
+      <form class="calc-form" data-calc="loan">
+        <div class="field"><label for="loanAmount">Loan amount</label><input id="loanAmount" name="loanAmount" type="number" min="0" step="500" /></div>
+        <div class="field"><label for="loanRate">Annual interest rate (%)</label><input id="loanRate" name="loanRate" type="number" min="0" step="0.05" /></div>
+        <div class="field"><label for="loanYears">Term (years)</label><input id="loanYears" name="loanYears" type="number" min="1" step="1" /></div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Calculate</button>
+          <button type="button" class="btn-ghost" data-action="share">Share</button>
+          <button type="button" class="btn-ghost" data-action="print">Print</button>
+          <button type="button" class="btn-ghost" data-action="reset">Reset</button>
+        </div>
+      </form>
+      <div class="ad-slot" data-ad></div>
+      <div id="result" class="result" data-result></div>
+    </section>
+
+    <section class="content">
+      <h2>How loan payments work</h2>
+      <p>Most installment loans are amortized: each fixed monthly payment covers that month's interest and a portion of principal. Early in the loan, most of each payment is interest; later, most goes to principal. The standard payment formula is <code>P = (PV &times; r) / (1 &minus; (1 + r)^&minus;n)</code>, where r is the monthly rate and n is the number of payments.</p>
+      <h3>Save by paying extra</h3>
+      <p>Even small extra payments toward principal dramatically cut total interest and shorten the term. Try lowering the term here to see the trade-off between monthly payment size and total interest paid. For home loans including taxes and insurance, use the <a href="mortgage-calculator.html">mortgage calculator</a>.</p>
+    
+      <p class="affil-link-line">Looking to consolidate a loan at a lower rate? <a href="#" data-affil="finance" data-affil-id="refinance">Compare personal loan refinance offers here</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+      <p>&copy; <span id="year"></span> Calculator Hub. Educational estimates — not financial advice.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+<script src="js/integrations.js"></script>
+</body>
+</html>
