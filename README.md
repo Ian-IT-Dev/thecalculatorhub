@@ -68,9 +68,27 @@ The custom domain `thecalculatorhub.co.uk` is already wired into every canonical
 Open `index.html` in any browser. Each calculator auto-runs on load and updates live as you change inputs. Try: switch currency in the header, toggle the theme (◐), open the nav menu (☰), click Share on any calculator and paste the URL into a new tab — the inputs restore.
 
 ## Monetize (autonomous income) — in order of how fast traffic unlocks it
-1. **Affiliate links** (fastest to start earning) — add contextual links inside the "content" sections: high-yield savings referrals, brokerage sign-up bonuses, budgeting apps. Disclose affiliates in the footer.
-2. **Google AdSense** (passive once approved) — needs real content + traffic. Submit to Search Console first; apply once you have meaningful visitors. Paste ad units into the existing `result` blocks and any `.content` section.
-3. **Donations** — add a "Buy me a coffee" link in the footer. Zero friction, low but non-zero income.
+
+The site is `.co.uk` so the monetisation strategy is UK-first; expand to broader English-speaking markets once UK traffic builds.
+
+1. **Affiliate links** (live now, fastest to start earning)
+   - **Amazon Associates** (`thecalcula029-20`) — auto-tagged on health/BMI/calorie pages; product images on BMI/calorie pages.
+   - **Skimlinks** (`305849X1794075`) — auto-affiliates any outbound merchant link.
+   - **Direct finance programs** (apply individually): UK LISA providers, ISA platforms, SIPP providers, mortgage brokers (e.g. Habito, L&amp;C, Trussle), balance-transfer cards via comparison sites (MoneySuperMarket, Compare the Market affiliate programs), brokerage referral schemes.
+   - **UK health affiliate**: MyProtein, Holland &amp; Barrett, Meal-prep services via Awin.
+   - All affiliate links go through `formatAffiliateLinks()` in `js/integrations.js` which auto-adds `rel="sponsored nofollow"` and FTC Amazon tag appending.
+
+2. **Google AdSense** (passive once approved)
+   - Submit site to Search Console, request indexing for every page.
+   - Apply once you have meaningful traffic (~300+ monthly visitors) and site age 6+ weeks.
+   - AdSense ad slots are pre-wired: each calculator page has a `<div class="ad-slot" data-ad></div>` that auto-fills with `<ins class="adsbygoogle">` once you set `ADSENSE_CLIENT` in `js/integrations.js`.
+
+3. **UK-specific backlink sources** (start month 2)
+   - **r/UKPersonalFinance** (Reddit ~500k members) — answer genuinely, link calculators when relevant.
+   - **MoneySavingExpert forum** — sign up, answer questions, link when genuinely useful.
+   - **UK finance blogs and HARO/ResponseSource** — quote requests from UK finance journalists (The Times, FT, Guardian, Telegraph money desks).
+
+4. **Donations** — optional "Buy me a coffee" link in the footer; zero friction, low but non-zero income.
 
 ## Grow traffic (the real work — passive income needs visitors)
 - **Add more calculators** — each targets new long-tail queries. Good next targets: paycheck/take-home, net worth, inflation, discounted cash flow, breakeven, investment fee drag, credit utilization, auto loan.

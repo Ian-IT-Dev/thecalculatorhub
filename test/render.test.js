@@ -43,7 +43,8 @@ const samples = [
   ['calorie', C.calorie({calUnits:'metric',sex:'male',age:30,height:175,weight:70,activity:1.55})],
   ['savings', C.savings({goal:20000,have:2000,months:36,savRate:4})],
   ['creditcard', C.creditcard({balance:5000,apr:22,payment:200})],
-  ['units', C.units({cat:'length',value:100,from:'m',to:'ft'})]
+  ['units', C.units({cat:'length',value:100,from:'m',to:'ft'})],
+  ['roll', C.rolllength({outerDiameter:1200,coreDiameter:76,thickness:50,diamUnit:'mm',thickUnit:'microns',outUnit:'m'})]
 ];
 for (const [n, r] of samples){
   try { tryRender(n, r); } catch(e){ fail++; console.log('render FAIL:', n, e.message); }

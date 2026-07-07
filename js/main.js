@@ -16,11 +16,11 @@ const CURRENCIES = ['USD','EUR','GBP','CAD','AUD','NZD','JPY','CNY','INR','ZAR',
 const CURRENCY_LABELS = {USD:'US Dollar',EUR:'Euro',GBP:'British Pound',CAD:'Canadian Dollar',AUD:'Australian Dollar',NZD:'NZ Dollar',JPY:'Japanese Yen',CNY:'Chinese Yuan',INR:'Indian Rupee',ZAR:'South African Rand',MXN:'Mexican Peso',BRL:'Brazilian Real',CHF:'Swiss Franc',SGD:'Singapore Dollar',HKD:'Hong Kong Dollar',NGN:'Nigerian Naira',KES:'Kenyan Shilling',AED:'UAE Dirham',SAR:'Saudi Riyal',SEK:'Swedish Krona',NOK:'Norwegian Krone',PLN:'Polish Zloty',TRY:'Turkish Lira',THB:'Thai Baht',IDR:'Indonesian Rupiah',PHP:'Philippine Peso'};
 const LOCALE_CURRENCY = {'en-US':'USD','en-GB':'GBP','en-CA':'CAD','en-AU':'AUD','en-NZ':'NZD','de-DE':'EUR','de-AT':'EUR','fr-FR':'EUR','es-ES':'EUR','it-IT':'EUR','nl-NL':'EUR','pt-PT':'EUR','en-IE':'EUR','en-IN':'INR','ja-JP':'JPY','zh-CN':'CNY','zh-HK':'HKD','en-HK':'HKD','en-ZA':'ZAR','es-MX':'MXN','pt-BR':'BRL','de-CH':'CHF','fr-CH':'CHF','en-SG':'SGD','en-NG':'NGN','sw-KE':'KES','en-KE':'KES','ar-AE':'AED','ar-SA':'SAR','sv-SE':'SEK','nb-NO':'NOK','pl-PL':'PLN','tr-TR':'TRY','th-TH':'THB','id-ID':'IDR','fil-PH':'PHP','en-PH':'PHP'};
 
-let currentCurrency = 'USD';
+let currentCurrency = 'GBP';
 function detectCurrency(){
   const langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en-US'];
   for (const l of langs){ if (LOCALE_CURRENCY[l]) return LOCALE_CURRENCY[l]; const base=l.split('-')[0]; if (base==='en') continue; const m=Object.keys(LOCALE_CURRENCY).find(k=>k.startsWith(base)); if (m) return LOCALE_CURRENCY[m]; }
-  return 'USD';
+  return 'GBP';
 }
 function localeForNum(){ try { return navigator.language || 'en-US'; } catch(e){ return 'en-US'; } }
 function money(n){
@@ -311,6 +311,56 @@ const Calculators = {
       caption:'Annual salary',
       sub:{ value: money(monthly), unit:'/ mo', label:`${money(weekly)} / week at ${hours} h/wk` },
       summary: [ ['Per hour', money(wage)], ['Per week', money(weekly)], ['Per month', money(monthly)], ['Per year', money(annual)] ]
+    };
+  },
+
+  /* ---- roll length ----
+     L = π × (D² − d²) / (4 × t)
+     All inputs converted to mm, then result converted to chosen output unit.
+     Material thickness supports microns (μm), mm, and inches — the key
+     requirement for thin films, foils, paper and label stock. */
+  rolllength(i){
+    const OD = +i.outerDiameter || 0;
+    const CD = +i.coreDiameter || 0;
+    const thickness = +i.thickness || 0;
+    const diamUnit = i.diamUnit || 'mm';
+    const thickUnit = i.thickUnit || 'microns';
+    const outUnit = i.outUnit || 'm';
+    if (!(OD > 0) || !(thickness > 0)) return empty();
+    if (OD <= CD) return { headline:{value:'—',unit:''}, caption:'Outer diameter must be larger than core diameter', summary:[] };
+
+    const diamToMm = { 'mm':1, 'cm':10, 'inches':25.4 };
+    const thickToMm = { 'microns':0.001, 'μm':0.001, 'mm':1, 'inches':25.4 };
+    const fromMm = { 'm':0.001, 'cm':0.1, 'mm':1, 'inches':1/25.4, 'feet':1/304.8 };
+    const outLabels = { 'm':'metres', 'cm':'cm', 'mm':'mm', 'inches':'inches', 'feet':'feet' };
+
+    const OD_mm = OD * diamToMm[diamUnit];
+    const CD_mm = (CD || 0) * diamToMm[diamUnit];
+    const t_mm = thickness * thickToMm[thickUnit];
+
+    const L_mm = Math.PI * (OD_mm * OD_mm - CD_mm * CD_mm) / (4 * t_mm);
+    const L_out = L_mm * fromMm[outUnit];
+
+    const series = [];
+    const nPoints = 30;
+    for (let k=0; k<=nPoints; k++){
+      const r = CD_mm + (OD_mm - CD_mm) * (k / nPoints);
+      const cumLen = (Math.PI * (r * r - CD_mm * CD_mm) / (4 * t_mm)) * fromMm[outUnit];
+      const x = diamUnit==='inches' ? r/25.4 : (diamUnit==='cm' ? r/10 : r);
+      series.push({ x, y: cumLen });
+    }
+
+    return {
+      headline: { value: num(L_out, 2), unit: outUnit },
+      caption: 'Total length of material on the roll',
+      sub: { value: num(L_mm * 0.001, 2), unit: 'm', label: 'equivalent' },
+      summary: [
+        ['Outer diameter', `${num(OD,2)} ${diamUnit}`],
+        ['Core diameter', `${num(CD,2)} ${diamUnit}`],
+        ['Material thickness', `${num(thickness,4)} ${thickUnit}`],
+        ['Total length', `${num(L_out,2)} ${outUnit}`]
+      ],
+      charts: [ { type:'line', title:'Length vs roll diameter', xLabel:`Diameter (${diamUnit})`, yLabel:`Length (${outUnit})`, series:[{ name:'Cumulative length', color:'var(--brand)', points: series }] } ]
     };
   }
 };

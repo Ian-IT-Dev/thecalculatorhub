@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Roll Length Calculator — Material on a Roll (Microns, mm, Inches)</title>
+  <meta name="description" content="Free roll length calculator. Find the total length of material wound on a roll from the outer diameter, core diameter and material thickness — supports microns (μm), mm and inches for thin films, foils, paper and label stock." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://thecalculatorhub.co.uk/roll-length-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Roll Length Calculator — Microns / mm / Inches" />
+  <meta property="og:description" content="Calculate total material length on a roll from outer diameter, core diameter and thickness (microns, mm, inches)." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Roll Length Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://thecalculatorhub.co.uk/roll-length-calculator.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free roll length calculator with micron, mm and inch support for material thickness."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate the length of material on a roll?","acceptedAnswer":{"@type":"Answer","text":"Use the formula L = π × (D² − d²) / (4 × t), where D is the outer diameter, d is the core diameter, and t is the material thickness — all in the same units. The result L is in those same units."}},{"@type":"Question","name":"Can I use microns for material thickness?","acceptedAnswer":{"@type":"Answer","text":"Yes. 1 micron (μm) is 0.001 mm. This calculator accepts thickness in microns, millimetres or inches and handles the conversion automatically."}}]}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Calculator<span>Hub</span></a>
+      <div class="header-right">
+        <div class="currency-switch"><label class="sr-only" for="currency">Currency</label><select id="currency" aria-label="Currency"></select></div>
+        <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">&#9688;</button>
+        <button class="nav-toggle" data-nav-toggle aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" data-nav-toggle></div>
+  <aside class="nav-drawer" aria-label="Calculators">
+    <button class="nav-close" data-nav-toggle aria-label="Close menu">&times;</button>
+    <a href="index.html">All calculators</a><a href="how-compound-interest-works.html" class="nav-article">How Compound Interest Works</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="savings-goal-calculator.html">Savings Goal</a><a href="retirement-calculator.html">Retirement / 401(k)</a><a href="roi-calculator.html">ROI</a><a href="loan-payoff-calculator.html">Loan Payoff</a><a href="mortgage-calculator.html">Mortgage</a><a href="credit-card-payoff-calculator.html">Credit Card Payoff</a><a href="hourly-to-salary.html">Hourly to Salary</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="tip-calculator.html">Tip</a><a href="percentage-calculator.html">Percentage</a><a href="bmi-calculator.html">BMI</a><a href="calorie-calculator.html">Calorie / TDEE</a><a href="unit-converter.html">Unit Converter</a><a href="roll-length-calculator.html">Roll Length</a>
+  </aside>
+
+  <main class="container calc-page">
+    <nav class="breadcrumbs"><a href="index.html">Home</a><span>›</span> Roll Length</nav>
+    <a class="back" href="index.html">&larr; All calculators</a>
+    <section class="calc">
+      <h1>Roll Length Calculator</h1>
+      <p class="desc"><span class="live-dot"></span>Live — find the total length of material wound on a roll from the outer diameter, core diameter and material thickness. Supports microns (μm), mm and inches for thin films, foils, paper and labels.</p>
+
+      <form class="calc-form" data-calc="rolllength">
+        <div class="field"><label for="outerDiameter">Outer diameter (D)</label><input id="outerDiameter" name="outerDiameter" type="number" min="0" step="0.1" placeholder="e.g. 1200" /></div>
+        <div class="field"><label for="diamUnit">Diameter units</label>
+          <select id="diamUnit" name="diamUnit">
+            <option value="mm">Millimetres (mm)</option>
+            <option value="cm">Centimetres (cm)</option>
+            <option value="inches">Inches (in)</option>
+          </select>
+        </div>
+        <div class="field"><label for="coreDiameter">Core diameter (d) — leave 0 if no core</label><input id="coreDiameter" name="coreDiameter" type="number" min="0" step="0.1" placeholder="e.g. 76" /></div>
+        <div class="field"><label for="thickness">Material thickness (t)</label><input id="thickness" name="thickness" type="number" min="0" step="any" placeholder="e.g. 50" /></div>
+        <div class="field"><label for="thickUnit">Thickness units</label>
+          <select id="thickUnit" name="thickUnit">
+            <option value="microns">Microns (μm) — for films/foils</option>
+            <option value="mm">Millimetres (mm)</option>
+            <option value="inches">Inches (in)</option>
+          </select>
+        </div>
+        <div class="field"><label for="outUnit">Result length units</label>
+          <select id="outUnit" name="outUnit">
+            <option value="m">Metres (m)</option>
+            <option value="cm">Centimetres (cm)</option>
+            <option value="mm">Millimetres (mm)</option>
+            <option value="feet">Feet (ft)</option>
+            <option value="inches">Inches (in)</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Calculate</button>
+          <button type="button" class="btn-ghost" data-action="share">Share</button>
+          <button type="button" class="btn-ghost" data-action="print">Print</button>
+          <button type="button" class="btn-ghost" data-action="reset">Reset</button>
+        </div>
+      </form>
+      <div class="ad-slot" data-ad></div>
+      <div id="result" class="result" data-result></div>
+    </section>
+
+    <section class="content">
+      <h2>How the roll length is calculated</h2>
+      <p>The total length of material wound on a roll follows from the cross-sectional area of the wound material divided by its thickness. The formula is:</p>
+      <p class="example"><em><code>L = π × (D² − d²) / (4 × t)</code></em></p>
+      <p>Where <strong>D</strong> is the outer diameter, <strong>d</strong> is the core (inner) diameter, and <strong>t</strong> is the material thickness — all in the same units. The result <strong>L</strong> is in those same units.</p>
+
+      <h3>Working in microns (μm)</h3>
+      <p>Thin films, foils, paper grades and label stock are commonly specified in microns. One micron (μm) is one-thousandth of a millimetre (<code>1 μm = 0.001 mm</code>). This calculator lets you enter thickness directly in microns without having to convert by hand — just type the value (e.g. <code>50</code> for a 50 μm film) and the unit conversion is handled automatically.</p>
+
+      <h3>Mixed units</h3>
+      <p>You can mix and match measurement systems: enter the diameters in millimetres and the thickness in microns, or diameters in inches and thickness in microns. The calculator converts everything to millimetres internally, computes the length, then converts the result to your chosen output unit.</p>
+
+      <h3>When is this useful?</h3>
+      <ul>
+        <li><strong>Printing &amp; packaging</strong> — estimate how many metres of film or label stock are on a roll before buying or running a job.</li>
+        <li><strong>Foils &amp; metals</strong> — work out the length of aluminium or copper foil on a core, where thickness is usually in microns.</li>
+        <li><strong>Paper &amp; board</strong> — convert between GSM, caliper and roll length when planning print runs.</li>
+        <li><strong>Textiles &amp; tape</strong> — estimate how much material remains on a partial roll given the current diameter.</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <p>The formula assumes the material is wound uniformly with no air gaps. Real-world rolls typically run 2–5% shorter than the theoretical value due to <strong>tension winding</strong> (the material stretches slightly under tension, taking up more length per layer) and <strong>air entrapment</strong> (which makes the roll appear thicker than the net material). For critical production work, subtract ~3% as a starting tension allowance and verify against a measured sample. The thickness you enter should be the <em>caliper</em> of the material under light pressure — using GSM (grammage) directly will give the wrong result.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="affiliate-disclosure.html">Affiliate Disclosure</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <p>&copy; <span id="year"></span> Calculator Hub. Educational tool — production use should be verified by physical measurement.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/integrations.js"></script>
+</body>
+</html>

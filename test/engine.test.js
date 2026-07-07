@@ -40,6 +40,10 @@ const tests = [
   ['units-temp', C.units({cat:'temperature',value:100,from:'C',to:'F'}), 'headline'],
   ['tax', C.tax({amount:100,rate:8.25}), 'headline'],
   ['hourly', C.hourly({wage:22,hours:40}), 'headline'],
+  ['roll-mm', C.rolllength({outerDiameter:1200,coreDiameter:76,thickness:50,diamUnit:'mm',thickUnit:'microns',outUnit:'m'}), 'headline'],
+  ['roll-inch', C.rolllength({outerDiameter:48,coreDiameter:3,thickness:2,diamUnit:'inches',thickUnit:'mm',outUnit:'feet'}), 'headline'],
+  ['roll-no-core', C.rolllength({outerDiameter:1200,coreDiameter:0,thickness:50,diamUnit:'mm',thickUnit:'microns',outUnit:'m'}), 'headline'],
+  ['roll-invalid', C.rolllength({outerDiameter:50,coreDiameter:200,thickness:50,diamUnit:'mm',thickUnit:'microns',outUnit:'m'}), 'headline'],
 ];
 
 let pass = 0;
